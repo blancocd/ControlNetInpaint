@@ -251,7 +251,6 @@ class StableDiffusionControlNetInpaintPipeline(StableDiffusionControlNetPipeline
         return mask, masked_image_latents
     
     @torch.no_grad()
-    @replace_example_docstring(EXAMPLE_DOC_STRING)
     def __call__(
         self,
         prompt: Union[str, List[str]] = None,        
