@@ -15,7 +15,7 @@
 import torch
 import PIL.Image
 import numpy as np
-
+from typing import Union, List, Optional, Callable, Dict, Any
 from diffusers import StableDiffusionControlNetPipeline
 
 EXAMPLE_DOC_STRING = """
