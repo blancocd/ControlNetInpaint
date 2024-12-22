@@ -16,7 +16,7 @@ import torch
 import PIL.Image
 import numpy as np
 
-from diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion_controlnet import *
+from diffusers import StableDiffusionControlNetPipeline
 
 EXAMPLE_DOC_STRING = """
     Examples:
