@@ -169,6 +169,13 @@ def prepare_mask_and_masked_image(image, mask):
 
     return mask, masked_image
 
+def _default_height_width(self, height, width, control_image):
+    if height is None:
+        height = self.unet.config.sample_size * self.vae_scale_factor
+    if width is None:
+        width = self.unet.config.sample_size * self.vae_scale_factor
+    return height, width
+
 class StableDiffusionControlNetInpaintPipeline(StableDiffusionControlNetPipeline):
     r"""
     Pipeline for text-guided image inpainting using Stable Diffusion with ControlNet guidance.
