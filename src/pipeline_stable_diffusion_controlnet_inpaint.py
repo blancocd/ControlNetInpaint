@@ -366,18 +366,6 @@ class StableDiffusionControlNetInpaintPipeline(StableDiffusionControlNetPipeline
         height, width = self._default_height_width(height, width, control_image)
 
         # 1. Check inputs. Raise error if not correct
-        if prompt:
-            self.check_inputs(
-                prompt, control_image, callback_steps, negative_promps, None, negative_prompt_embeds
-            )
-        elif (prompt_embeds):
-            self.check_inputs(
-                None, control_image, callback_steps, negative_prompt, prompt_embeds, negative_prompt_embeds
-            )
-        else:
-            raise ValueError(
-                "Provide either `prompt` or `prompt_embeds`. Cannot leave both `prompt` and `prompt_embeds` undefined."
-            )
 
         # 2. Define call parameters
         if prompt is not None and isinstance(prompt, str):
